@@ -1,20 +1,20 @@
-
 <?php
 require_once "Connect.php";
-if(isset($_POST['save']))
+if(isset($_POST['submit']))
 {    
  $name = $_POST['name'];
  $mobile = $_POST['mobile'];
  $email = $_POST['email'];
  $salary = $_POST['salary'];
 $sql = "INSERT INTO employee (Name,mobile,email,salary)
-VALUES ($name,$mobile,'$email',$salary)";
-$result=mysqli_query($conn, $sql);
+VALUES ('$name','$mobile','$email','$salary')";
+$result=mysqli_query($con, $sql);
+//print_r($result);
 if($result){
-  //  echo "Data inserted  Sucessfully";
+  //echo "Data inserted  Sucessfully";
     header('location:index.php');
 }else{
-    echo("ERROR: Could not connect");
+  die(mysqli_error($con));
 }
 }
 
@@ -51,7 +51,7 @@ if($result){
 <input type="text" name="salary" class="form-control"  maxlength="12" required="">
 </div>
 <br>
-<input type="submit" class="btn btn-primary" name="save" value="submit">
+<input type="submit" class="btn btn-primary" name="submit">
 <a href="index.php" class="btn btn-default">Cancel</a>
 </form>
 </div>

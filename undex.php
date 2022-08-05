@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <?php
+    $a="apple";
+
+    echo  "$a";
+    ECHO "Hello World!<br>";
+echo "Hello World!<br>";
+EcHo "Hello World!<br>";
+
+    echo "nilam Surve $a";
+
+    ?>
+
+
+</body>
+</html>

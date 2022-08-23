@@ -1,6 +1,6 @@
 <?php 
 include'Connect.php';
-include'index3.php';?>
+include 'index3.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,25 +20,34 @@ include'index3.php';?>
 <th scope="col">Sr no </th>   
 <th scope="col">Name</th>
 <th scope="col">Email id</th>
+<th scope="col">Mobile</th>
+<th scope="col">Salary</th>
 <th scope="col">Action</th>
 </tr>
 </thead>
 <tbody>
 <?php
-$sql = "SELECT id, Name,email FROM employee";
+$sql= "SELECT * FROM employee order by name desc";
+//$sql="SELECT * From employee order by id desc";
+//$sql="select * from employee order by Name desc,salary asc";
 $result=mysqli_query($con, $sql);
+$sr=1;
 if($result){
     while($row = mysqli_fetch_array($result)) {
     
     //table filed name
-    $id=$row['id'];
+     $id=$row['id'];
      $name=$row['Name'];
-     $email=$row['email'];
-          echo ' <tr>
-     <th scope ="row">'.$id.'</th>
+      $email=$row['email'];
+      $mobile=$row['mobile'];
+      $salary=$row['salary'];
+     echo ' <tr>
+     <th scope ="row">'.$sr++.'</th>
      <td>'.$name.'</td>
      <td>'.$email.'</td>
-          <td>
+     <td>'.$mobile.'</td>
+     <td>'.$salary.'</td>
+     <td>
      <button class="btn btn-primary"><a href="update.php?updateid='.$id.'" class="text-light">Update</a></button>
      <button class="btn btn-danger"><a href="delete.php?deleteid='.$id.'" class="text-light">Delete</a></button></td>
      </tr>';
@@ -50,6 +59,6 @@ if($result){
 </div>
 </table>
 
-
 </body>
 </html>
+

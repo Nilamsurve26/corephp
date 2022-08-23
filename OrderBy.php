@@ -1,7 +1,6 @@
 <?php 
 include'Connect.php';
-include'index3.php';?>
-
+include 'index3.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +12,6 @@ include'index3.php';?>
 <body>
 <div class="container">
 <div style="margin-left:25%">
-
 <a href="create.php" class="btn btn-success my-5">Add New User</a>
 
 <table class='table table-bordered table-striped'>
@@ -29,18 +27,20 @@ include'index3.php';?>
 </thead>
 <tbody>
 <?php
-$sql = "SELECT * FROM employee";
+$sql= "SELECT * FROM employee order by name desc";
+//$sql="SELECT * From employee order by id desc";
+//$sql="select * from employee order by Name desc,salary asc";
 $result=mysqli_query($con, $sql);
-$sr = 1;
+$sr=1;
 if($result){
     while($row = mysqli_fetch_array($result)) {
     
     //table filed name
      $id=$row['id'];
      $name=$row['Name'];
-     $email=$row['email'];
-     $mobile=$row['mobile'];
-     $salary=$row['salary'];
+      $email=$row['email'];
+      $mobile=$row['mobile'];
+      $salary=$row['salary'];
      echo ' <tr>
      <th scope ="row">'.$sr++.'</th>
      <td>'.$name.'</td>
@@ -59,6 +59,6 @@ if($result){
 </div>
 </table>
 
-
 </body>
 </html>
+

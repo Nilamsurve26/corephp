@@ -1,17 +1,23 @@
+<?php
 
- <?php
+// Server name must be localhost
+$servername = "localhost";
 
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'curd');
- 
+// In my case, user name will be root
+$username = "root";
 
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
- 
-if($link === false){
-   echo"connction sucessfully";
+// Password is empty
+$password = "";
+
+$database="curd";
+
+// Creating a connection
+$con= new mysqli($servername,
+			$username, $password,$database);
+
+
+if (!$con) {
+   die(mysqli_error($con));
+
 }
-
-
-?> 
+?>

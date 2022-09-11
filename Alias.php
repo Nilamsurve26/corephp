@@ -27,31 +27,31 @@ include'index3.php';?>
 </thead>
 <tbody>
 important note
-range find sathi between opretors  use karaych 
-pn yat string sathi S cha record nahi yenar jr ithe numeric value ghetli tr 64 record pn yenar 
-<?php
-// $sql="SELECT * from employee where Name BETWEEN 'A'AND 'S'";
-//$sql="SELECT * from employee where Id BETWEEN 54 And 64";
-$sql="SELECT * from employee where Id NOT BETWEEN 54 And 64";
+aliases are used to temporarily rename a table name or a column name.
+For table
+syntax- SELECT column_name FROM table_name AS alias_name;
+For Column
+syntax-SELECT column_nam AS alias_name FROM table_name;
+yat Name ha column ch Student_name hoil aani record yetil
 
+<?php
+// $sql="SELECT Name AS Student_name From employee";
+// aani AS he optional pn aahe
+$sql="SELECT Name Student_name From employee";
 $result=mysqli_query($con, $sql);
 // print_r($sql);
 $sr=1;
 if($result){
     while($row = mysqli_fetch_array($result)) {
     
-         $id=$row['id'];
-         $name=$row['Name'];
-         $email=$row['email'];
-         $mobile=$row['mobile'];
-         $salary=$row['salary'];
+        // $id=$row['id'];
+         $name=$row['Student_name'];
+        //  $email=$row['email'];
+        //  $mobile=$row['mobile'];
+        //  $salary=$row['salary'];
          echo ' <tr>
-         <th scope ="row">'.$id.'</th>
+         <th scope ="row">'.$sr++.'</th>
          <td>'.$name.'</td>
-         <td>'.$email.'</td>
-         <td>'.$mobile.'</td>
-         <td>'.$salary.'</td>
-
           </tr>';
     }
 }
@@ -60,7 +60,5 @@ if($result){
 </div>
 </div>
 </table>
-
-
 </body>
 </html>

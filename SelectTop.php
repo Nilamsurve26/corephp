@@ -25,7 +25,9 @@ include'index3.php';?>
 </thead>
 <tbody>
 <?php
-$sql = "SELECT *  FROM employee limit=2";
+//  $sql = "SELECT *  FROM employee limit 2";
+ $sql="SELECT * from employee where Name='nilam' limit 2";
+// Print_r($sql);
 $result=mysqli_query($con, $sql);
 if($result){
     while($row = mysqli_fetch_array($result)) {

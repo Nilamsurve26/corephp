@@ -17,18 +17,20 @@ include'index3.php';?>
 <table class='table table-bordered table-striped'>
     <thead>
 <tr>
-<th scope="col">Sr no </th>   
+<th scope="col">Sr no </th> 
 <th scope="col">Name</th>
+<th scope="col">Email</th>
+<th scope="col">Mobile</th>
+<th scope="col">Salary</th>
 
 </tr>
 </thead>
 <tbody>
-The AVG() function returns the average value of a numeric column. 
+important note
+He same or function sarkh aahe jyach name nilam aani ramesh asel ase record fetch honar
 <?php
-// $sql="SELECT count(salary) as salary from employee";
-$sql="SELECT avg(salary) as salary,Name from employee";
+$sql="SELECT * from employee where Name IN('nilam','ramesh')";
 
-// $sql="SELECT min(salary) as salary from employee";
 
 $result=mysqli_query($con, $sql);
 // print_r($sql);
@@ -38,13 +40,16 @@ if($result){
     
         // $id=$row['id'];
          $name=$row['Name'];
-        // $email=$row['email'];
-        // $mobile=$row['mobile'];
-        $salary=$row['salary'];
+         $email=$row['email'];
+         $mobile=$row['mobile'];
+         $salary=$row['salary'];
          echo ' <tr>
          <th scope ="row">'.$sr++.'</th>
          <td>'.$name.'</td>
+         <td>'.$email.'</td>
+         <td>'.$mobile.'</td>
          <td>'.$salary.'</td>
+
           </tr>';
     }
 }

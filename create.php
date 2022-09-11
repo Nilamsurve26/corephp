@@ -9,13 +9,13 @@ if(isset($_POST['submit']))
 $sql = "INSERT INTO employee (Name,mobile,email,salary)
 VALUES ('$name','$mobile','$email','$salary')";
 $result=mysqli_query($con, $sql);
-//print_r($result);
-if($result){
-  //echo "Data inserted  Sucessfully";
-    header('location:index.php');
-}else{
-  die(mysqli_error($con));
-}
+// print_r($sql);
+ if($result){
+//   //echo "Data inserted  Sucessfully";
+     header('location:index.php');
+ }else{
+   die(mysqli_error($con));
+ }
 }
 
 ?>
@@ -36,7 +36,7 @@ if($result){
 <form method="post">
 <div class="form-group">
 <label>Name</label>
-<input type="text" name="name" class="form-control"  maxlength="50" required="">
+<input type="text" name="name" class="form-control"  maxlength="50">
 </div>
 <div class="form-group">
 <label>Email</label>
@@ -48,7 +48,7 @@ if($result){
 </div>
 <div class="form-group">
 <label>Salary</label>
-<input type="text" name="salary" class="form-control"  maxlength="12" required="">
+<input type="text" name="salary" class="form-control"  maxlength="12">
 </div>
 <br>
 <input type="submit" class="btn btn-primary" name="submit">

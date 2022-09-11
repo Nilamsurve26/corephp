@@ -27,7 +27,7 @@ include 'index3.php';?>
 </thead>
 <tbody>
 <?php
-$sql= "SELECT * FROM employee order by name desc";
+$sql= "SELECT * FROM employee order by name asc";
 //$sql="SELECT * From employee order by id desc";
 //$sql="select * from employee order by Name desc,salary asc";
 $result=mysqli_query($con, $sql);

@@ -31,15 +31,15 @@ include'index3.php';?>
 </thead>
 <tbody>
 important note
-Inner or Join both are same 
-Syntax- select * from table_name Inner Join 2Table_Name on 1Table_name.id= 2table_name.primarykey 
-primary key mhnje first table id second table mdhe primary key http_response_code
-Inner mhnje dhogha mdhle sarv column yenar 
+Left or Left outer join both are same 
+Syntax- select * from table_name Left Join 2Table_Name on 1Table_name.id= 2table_name.primarykey 
+primary key mhnje first table id second table mdhe primary key
+** yat left/left means select * from table_name lihu tyatle table mdhle sarv record yenar second table kiti pn empid asude pn left madhe sarv record yenar aani inner madhe kse yayche jevde empid orders amdhe astil tevdech record yayche 
+** firs yat  inner join chalnar mg yat rahilel record yenar jo table left join la asel tyatle yenar 
 <?php
-// $sql="SELECT * from employee  JOIN orders on employee.id = orders.emp_id";
-
-// $sql="SELECT * from employee Inner JOIN orders on employee.id = orders.emp_id";
-$sql="SELECT employee.id, employee.Name, orders.id, orders.orderamount from employee Inner JOIN orders on employee.id = orders.emp_id";
+//  $sql="SELECT * from employee Left JOIN orders on employee.id = orders.emp_id";
+ $sql="SELECT * from orders Left JOIN employee on employee.id= orders.emp_id";
+// $sql="SELECT employee.id, employee.Name, orders.id, orders.orderamount from employee Left JOIN orders on employee.id = orders.emp_id";
 $result=mysqli_query($con, $sql);
 print_r($sql);
 $sr=1;

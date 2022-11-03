@@ -31,17 +31,21 @@ include'index3.php';?>
 </thead>
 <tbody>
 important note
-Inner or Join both are same 
-Syntax- select * from table_name Inner Join 2Table_Name on 1Table_name.id= 2table_name.primarykey 
-primary key mhnje first table id second table mdhe primary key http_response_code
-Inner mhnje dhogha mdhle sarv column yenar 
+** full mhnje donhi table madhala sarv data yenar 
+**Full  or Full outer join both are same pn mysql full join la support nahi krt mg aapn union keyword cha use krto tyat 
+first left join query union right join query as lihlyvr donhi table madhla sarv data yenar 
+
+Syntax- left join query ani union keyword right join query mg sarv record yenar 
+
+**yevd lakshat tevaych ki left join mean left la jo asto tyatle record yetat aani right join mean 
+right join chya bajula /right hand tya table mdhle record yenar yana marge krnar union keyword 
 <?php
 // $sql="SELECT * from employee  JOIN orders on employee.id = orders.emp_id";
-
-// $sql="SELECT * from employee Inner JOIN orders on employee.id = orders.emp_id";
-$sql="SELECT employee.id, employee.Name, orders.id, orders.orderamount from employee Inner JOIN orders on employee.id = orders.emp_id";
+$sql="SELECT * from employee right JOIN orders on employee.id= orders.emp_id 
+UNION SELECT * from employee left JOIN orders on employee.id = orders.emp_id";
+// $sql="SELECT employee.id, employee.Name, orders.id, orders.orderamount from employee Left JOIN orders on employee.id = orders.emp_id";
 $result=mysqli_query($con, $sql);
-print_r($sql);
+// print_r($sql);
 $sr=1;
 if($result){
     while($row = mysqli_fetch_array($result)) {

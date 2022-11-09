@@ -24,10 +24,10 @@ include'index3.php';?>
 </thead>
 <tbody>
 important note
-The MIN() function returns the smallest value of the selected column.
+The MIN() function returns the smallest value of the selected column.yat as column name takl apan print honyasathi 
 The MAX() function returns the largest value of the selected column.
 <?php
-$sql="SELECT max(salary) as salary from employee";
+$sql="SELECT MAX(salary) AS salary,Name,email,mobile FROM employee";
 $sql="SELECT min(salary) as salary from employee";
 
 $result=mysqli_query($con, $sql);
@@ -39,7 +39,7 @@ if($result){
         // $id=$row['id'];
         // $name=$row['Name'];
         // $email=$row['email'];
-        // $mobile=$row['mobile'];
+         $mobile=$row['mobile'];
         $salary=$row['salary'];
          echo ' <tr>
          <th scope ="row">'.$sr++.'</th>

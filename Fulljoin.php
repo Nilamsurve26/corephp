@@ -30,7 +30,8 @@ include'index3.php';?>
 </tr>
 </thead>
 <tbody>
-important note
+important note  
+**Full join 
 ** full mhnje donhi table madhala sarv data yenar 
 **Full  or Full outer join both are same pn mysql full join la support nahi krt mg aapn union keyword cha use krto tyat 
 first left join query union right join query as lihlyvr donhi table madhla sarv data yenar 

@@ -30,8 +30,8 @@ include'index3.php';?>
 </tr>
 </thead>
 <tbody>
-important note
-Left or Left outer join both are same 
+<b>important note</b>
+<p>Left or Left outer join both are same</p> 
 Syntax- select * from table_name Left Join 2Table_Name on 1Table_name.id= 2table_name.primarykey 
 primary key mhnje first table id second table mdhe primary key
 ** yat left/left means select * from table_name lihu tyatle table mdhle sarv record yenar second table kiti pn empid asude pn left madhe sarv record yenar aani inner madhe kse yayche jevde empid orders amdhe astil tevdech record yayche 
